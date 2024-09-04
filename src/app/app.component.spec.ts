@@ -1,10 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { By } from '@angular/platform-browser';
+import { ChannelListComponent, StreamChatModule } from 'stream-chat-angular';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, TranslateModule.forRoot()],
     }).compileComponents();
   });
 
@@ -14,16 +17,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'chat-example' title`, () => {
+  it('should init chat', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('chat-example');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, chat-example');
+    const streamChannelList = fixture.debugElement.query(By.directive(ChannelListComponent))
+    expect(streamChannelList).not.toBeNull();
+    expect(streamChannelList).toBeDefined();
   });
 });
