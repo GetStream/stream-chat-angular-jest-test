@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   ) {
     const apiKey = 'dz5f4d5kzrue';
     const userId = 'rapid-rain-4';
-    const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmFwaWQtcmFpbi00IiwiZXhwIjoxNzI1NDUzODMyfQ.BKcIvOtCzxqjCWpGWR4pGG7RIypMRQz0oDAtvFt41Sw';
+    const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoicmFwaWQtcmFpbi00IiwiZXhwIjoxNzI2MDQzMjcwfQ.gpcTjhYLW6V6ljcmDnMYobDliJ5ve1FM6TK6DG2e56Q';
     this.chatService.init(apiKey, userId, userToken);
     this.streamI18nService.setTranslation();
   }
